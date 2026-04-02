@@ -7,7 +7,7 @@ description: This is my personal OS image.
 
 # the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/blue-build/base-images/fedora-base-nvidia
-image-version: 43 # latest is also supported if you want new updates ASAP
+image-version: latest # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
@@ -16,11 +16,13 @@ modules:
     files:
       - source: system
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
-
   - type: dnf
     repos:
       copr:
         - atim/starship
+        - mineiro/ghostty
+        - lihaohong/yazi
+        - hermitfeather/hyprland 
     install:
       packages:
         - helix
@@ -30,17 +32,16 @@ modules:
         - ghostty
         - yazi
         - wofi
-        - swww
-        - gammastep
+        - hyprpaper
+        - hyprsunset
         - hyprshot
-        - pixi
         - fish
-    remove:
-      packages:
-        # example: removing firefox (in favor of the flatpak)
-        # "firefox" is the main package, "firefox-langpacks" is a dependency
-        - firefox
-        - firefox-langpacks 
+    # remove:
+    #   packages:
+    #     # example: removing firefox (in favor of the flatpak)
+    #     # "firefox" is the main package, "firefox-langpacks" is a dependency
+    #     - firefox
+    #     - firefox-langpacks 
 
   # - type: default-flatpaks
   #   configurations:
@@ -52,4 +53,4 @@ modules:
           
   #     - scope: user # Also add Flathub user repo, but no user packages
 
-  - type: signing # this sets up the proper policy & signing files for signed images to work fully
+  # - type: signing # this sets up the proper policy & signing files for signed images to work fully
