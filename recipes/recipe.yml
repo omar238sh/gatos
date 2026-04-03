@@ -23,7 +23,7 @@ modules:
         - mineiro/ghostty
         - lihaohong/yazi
         - hermitfeather/hyprland
-        - alebastr/ly 
+
     install:
       packages:
         - helix
@@ -38,7 +38,7 @@ modules:
         - hyprshot
         - fish
         - podman
-        - ly
+        - gdm
     remove:
         auto-remove: true
         packages:
@@ -58,5 +58,5 @@ modules:
   - type: systemd
     system:
       enabled:
-        - ly.service
+        - gdm.service
   - type: signing
