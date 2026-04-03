@@ -22,7 +22,8 @@ modules:
         - atim/starship
         - mineiro/ghostty
         - lihaohong/yazi
-        - hermitfeather/hyprland 
+        - hermitfeather/hyprland
+        - ctrldemi/ly-dm 
     install:
       packages:
         - helix
@@ -37,21 +38,22 @@ modules:
         - hyprshot
         - fish
         - podman
+        - ly
     remove:
         auto-remove: true
         packages:
           - kitty
           - nwg-panel
     
-
-
   - type: soar
     additional-repos: true
-    auto-upgrade: true
+    auto-upgrade: false
+    
 
   - type: script
     snippets:
           - curl -fsSL https://pixi.sh/install.sh | bash
           - mv /root/.pixi/bin/pixi /usr/bin/pixi
           - rm -rf /root/.pixi
-        
+          - systemctl enable ly  
+  - type: signing
