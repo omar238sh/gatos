@@ -37,13 +37,15 @@ modules:
         - hyprshot
         - fish
         - podman
-    exclude:
-        - kitty
-        - nwg-panel
+    remove:
+        auro-remove: true
+        packages:
+          - kitty
+          - nwg-panel
     auto-remove: true
 
     
-  - type: run
+  - type: script
     snippets:
           - curl -fsSL https://pixi.sh/install.sh | bash
           - mv /root/.pixi/bin/pixi /usr/bin/pixi
