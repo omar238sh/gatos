@@ -23,7 +23,7 @@ modules:
         - mineiro/ghostty
         - lihaohong/yazi
         - hermitfeather/hyprland
-        - ctrldemi/ly-dm 
+        - alebastr/ly 
     install:
       packages:
         - helix
