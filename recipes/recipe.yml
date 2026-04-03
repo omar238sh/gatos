@@ -38,11 +38,11 @@ modules:
         - fish
         - podman
     remove:
-        auro-remove: true
+        auto-remove: true
         packages:
           - kitty
           - nwg-panel
-    auto-remove: true
+    
 
     
   - type: script
