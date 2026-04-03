@@ -44,12 +44,14 @@ modules:
           - nwg-panel
     
 
-    
+
+  - type: soar
+    additional-repos: true
+    auto-upgrade: true
+
   - type: script
     snippets:
           - curl -fsSL https://pixi.sh/install.sh | bash
           - mv /root/.pixi/bin/pixi /usr/bin/pixi
           - rm -rf /root/.pixi
-          - curl -fsSL "https://soar.qaidvoid.dev/install.sh" | sh
-          - mv /root/.local/bin/soar /usr/bin/soar
-          - rm -rf /root/.local
+        
